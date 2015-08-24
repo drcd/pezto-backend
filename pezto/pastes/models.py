@@ -29,7 +29,7 @@ class Paste(models.Model):
     def save(self, *args, **kwargs):
         super(Paste, self).save(*args, **kwargs)  # Save to DB
         # Generate UID from current ID
-        self.uid = Hashids(salt=settings.PEZTO_HASHIDS_SEED).encode(self.id)
+        self.uid = Hashids(min_length=6, salt=settings.PEZTO_HASHIDS_SEED).encode(self.id)
         super(Paste, self).save(*args, **kwargs)  # Apply changes
         
     class Meta:

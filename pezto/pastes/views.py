@@ -20,10 +20,10 @@ def _get_client_ip(request):
     return ip
 
 @csrf_exempt
-def get_paste(request, paste_id):
+def get_paste(request, paste_uid):
     if request.method == 'GET':
         try:
-            paste = Paste.objects.get(id=paste_id)
+            paste = Paste.objects.get(uid=paste_uid)
 
             json = {
                 'uid': paste.uid,
@@ -67,7 +67,7 @@ def get_paste(request, paste_id):
         # End of hack
 
         try:
-            paste = Paste.objects.get(id=paste_id)
+            paste = Paste.objects.get(uid=paste_uid)
 
             if paste.password is None:
                 err = {'error': 'This paste cannot be modified'}
@@ -97,10 +97,10 @@ def get_paste(request, paste_id):
                 paste.save()
                 msg = {
                     'message': 'The paste has been successfully modified',
-                    'location': '/paste/%s' % paste.id,
+                    'uid': paste.uid,
                 }
                 response = JsonResponse(msg, status=200)
-                response['Location'] = '/paste/%s' % paste.id
+                response['Location'] = str(paste.uid)
                 return response
             else:
                 err = {'error': 'Incorrect password'}
@@ -130,7 +130,7 @@ def get_paste(request, paste_id):
         # End of hack
 
         try:
-            paste = Paste.objects.get(id=paste_id)
+            paste = Paste.objects.get(uid=paste_uid)
 
             if paste.password is None:
                 err = {'error': 'This paste cannot be deleted'}
@@ -161,10 +161,10 @@ def get_paste(request, paste_id):
         return JsonResponse(err, status=400)
 
 @csrf_exempt
-def get_paste_raw(request, paste_id):
+def get_paste_raw(request, paste_uid):
     if request.method == 'GET':
         try:
-            paste = Paste.objects.get(id=paste_id)
+            paste = Paste.objects.get(uid=paste_uid)
             text = paste.content
 
             return HttpResponse(text, status=200, content_type='text/plain')
@@ -196,7 +196,13 @@ def post_paste(request):
 
         paste.save()
 
-        return HttpResponseRedirect('/paste/%s' % paste.id)
+        msg = {
+            'message': 'The paste has been successfully posted',
+            'uid': paste.uid,
+        }
+        response = JsonResponse(msg, status=200)
+        response['Location'] = str(paste.uid)
+        return response
     else:
         err = {'error': 'Bad Request'}
         return JsonResponse(err, status=400)

@@ -18,13 +18,11 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 
     url(r'^paste$', 'pastes.views.post_paste', name='post_paste'),
-    url(r'^paste/(?P<paste_id>[0-9]+)$', 'pastes.views.get_paste', name='get_paste_by_id'),
+    url(r'^paste/(?P<paste_uid>[A-Za-z0-9]+)$', 'pastes.views.get_paste', name='get_paste_by_uid'),
     
     # Raw
-    url(r'^paste/(?P<paste_id>[0-9]+)/raw$', 'pastes.views.get_paste_raw', name='get_paste_by_id_raw'),
-    url(r'^paste/(?P<paste_id>[0-9]+).txt$', 'pastes.views.get_paste_raw', name='get_paste_by_id_raw'),
-    #url(r'^p/(?P<id>[0-9]+)$', 'pastes.paste_handler', name='paste_by_uid'),
+    url(r'^paste/(?P<paste_uid>[A-Za-z0-9]+)/raw$', 'pastes.views.get_paste_raw', name='get_paste_by_uid_raw'),
+    url(r'^paste/(?P<paste_uid>[A-Za-z0-9]+).txt$', 'pastes.views.get_paste_raw', name='get_paste_by_uid_raw'),
 ]
