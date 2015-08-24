@@ -5,12 +5,12 @@ Uploads a paste
 - content
 - password (optional)
 
-## GET /paste/<uid>
+## GET /paste/[uid]
 Retrieve a specific paste by UID
 ### Parameters
 None
 
-## PUT /paste/<uid>
+## PUT /paste/[uid]
 Updates a specific paste by UID.
 
 Only pastes with a password can be edited.
@@ -19,16 +19,16 @@ Only pastes with a password can be edited.
 - content (optional)
 - password
 
-## DELETE /paste/<uid>
+## DELETE /paste/[uid]
 Deletes a specific paste by UID.
 
 Only pastes with a password can be deleted.
 ### Parameters
 - password
 
-## GET /paste/<uid>/raw  or  GET /paste/<uid>.txt
+## GET /paste/[uid]/raw  or  GET /paste/[uid].txt
 Returns the content of the paste as plain text.
 
-The latter one (/paste/<uid>.txt) is especially good for downloading.
+The latter one (/paste/[uid].txt) is especially good for downloading.
 ### Parameters
 None
