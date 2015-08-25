@@ -1,0 +1,14 @@
+{
+  "name": "Pezto",
+  "version": "0.0.0",
+  "authors": [
+    "Stenkilde <hello@stenkil.de>",
+    "DrCoolDude"
+  ],
+  "description": "A small pastebin with Angular and Python",
+  "dependencies": {
+    "angular": "~1.4.4",
+    "angular-foundation": "~0.6.0",
+    "angular-ui-router": "~0.2.15"
+  }
+}

@@ -60,5 +60,5 @@ target/
 db.sqlite3
 
 #Frontend stuff
-static/libs
+pezto/static/libs
 .idea/
