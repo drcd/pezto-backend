@@ -58,3 +58,7 @@ docs/_build/
 target/
 
 db.sqlite3
+
+#Frontend stuff
+static/libs
+.idea/
