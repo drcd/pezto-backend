@@ -6,7 +6,7 @@
 		.controller('Pasto', Pasto);
 
 	/* @ngInject */
-	function Pasto(PasteFactory, $state, $stateParams) {
+	function Pasto(PasteFactory, $state) {
 		/*jshint validthis: true */
 		var vm 			= this;
 		vm.makePaste	= makePaste;
@@ -24,6 +24,7 @@
 				content: vm.content
 			}).then(function(result) {
 				console.log(result)
+				$state.go('application.pasteview', {id: result.data.uid });
 			});
 		}
 

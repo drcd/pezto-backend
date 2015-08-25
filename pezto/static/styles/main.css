@@ -6347,6 +6347,6 @@ th.hide-for-touch {
   .setview.open {
     transform: translateY(0);
     opacity: 1;
-    pointer-events: default; }
+    pointer-events: all; }
 
 /*# sourceMappingURL=main.css.map */
