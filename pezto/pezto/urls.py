@@ -19,8 +19,8 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
 
-    url(r'^paste$', 'pastes.views.post_paste', name='post_paste'),
-    url(r'^paste/(?P<paste_uid>[A-Za-z0-9]+)$', 'pastes.views.get_paste', name='get_paste_by_uid'),
+    url(r'^paste$', 'pastes.views.paste_route', name='post_paste'),
+    url(r'^paste/(?P<paste_uid>[A-Za-z0-9]+)$', 'pastes.views.paste_route', name='paste_by_uid'),
     
     # Raw
     url(r'^paste/(?P<paste_uid>[A-Za-z0-9]+)/raw$', 'pastes.views.get_paste_raw', name='get_paste_by_uid_raw'),
