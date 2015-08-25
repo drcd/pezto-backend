@@ -10,7 +10,7 @@
 				url: '/',
 				views: {
 					'main@application': {
-						templateUrl: 'modules/pastes/index/paste.template.html',
+						templateUrl: 'static/modules/pastes/index/paste.template.html',
 						controller: 'Pasto',
 						controllerAs: 'pasto'
 					}
@@ -22,7 +22,7 @@
 				url: '/paste/:id',
 				views: {
 					'main@application': {
-						templateUrl : 'modules/pastes/view/view.template.html',
+						templateUrl : 'static/modules/pastes/view/view.template.html',
 						controller  : 'Pasteview',
 						controllerAs: 'view'
 					}
@@ -34,7 +34,7 @@
 				url: '/create',
 				views: {
 					'main@application': {
-						templateUrl: 'modules/pastes/edit/edit.template.html',
+						templateUrl: 'static/modules/pastes/edit/edit.template.html',
 						controller: 'Pasteedit',
 						controllerAs: 'edit'
 					}
