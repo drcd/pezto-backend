@@ -20,11 +20,10 @@
 
 		function makePaste() {
 			PasteFactory.addPaste({
-				header: vm.header,
-				body: vm.body
+				title: vm.title,
+				content: vm.content
 			}).then(function(result) {
-				console.log(result.data._id);
-				$state.go('application.pasteview', {id: result.data._id });
+				console.log(result)
 			});
 		}
 

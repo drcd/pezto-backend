@@ -9,19 +9,21 @@
 	function PasteFactory($http, $q) {
 
 		var service = {
-			getPaste: 	getPaste,
 			getSingle:		getSingle,
-			addPaste:	addPaste
+			addPaste:		addPaste
 		};
 
 		return service;
 
-		function addPaste(article) {
+		function addPaste(content) {
 			var deferred = $q.defer();
 
-			var url = '/api/pastes';
+			var url = '/paste';
 
-			$http.post(url,article).then(function(results) {
+
+			$http.post(url, content, {
+				headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+			}).then(function(results) {
 				deferred.resolve(results);
 			}, function(err) {
 				deferred.reject(err);
@@ -32,28 +34,11 @@
 		function getSingle(id) {
 			var deferred = $q.defer();
 
-			var url = '/api/paste/' + id;
+			var url = '/paste/' + id;
 
 			var pastePromise = $http.get(url, id);
 
 			pastePromise.then(function(results) {
-				deferred.resolve(results);
-			}, function(err) {
-				deferred.reject(err);
-			});
-
-			return deferred.promise;
-		}
-
-		function getPaste() {
-			var deferred = $q.defer();
-
-			var url = '/api/pastes';
-
-			var storesPromise = $http.get(url);
-
-			storesPromise.then(function(results) {
-
 				deferred.resolve(results);
 			}, function(err) {
 				deferred.reject(err);
