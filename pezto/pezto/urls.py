@@ -16,8 +16,14 @@ Including another URLconf
 from django.conf.urls import include, patterns, url
 from django.contrib import admin
 
+from django.views.generic import TemplateView
+
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+
+    url(r'^$', 
+    	TemplateView.as_view(template_name='index.html'),
+    	name='home'),
 
     url(r'^paste$', 'pastes.views.paste_route', name='post_paste'),
     url(r'^paste/(?P<paste_uid>[A-Za-z0-9]+)$', 'pastes.views.paste_route', name='paste_by_uid'),

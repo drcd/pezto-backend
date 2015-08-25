@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="pastorino">
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title></title>
+        <link rel="stylesheet" href="styles/main.css"/>
+    </head>
+    <body>
+
+        <div ui-view="application"></div>
+
+        <script src="libs/angular/angular.min.js"></script>
+        <script src="libs/angular-ui-router/release/angular-ui-router.min.js"></script>
+        <script src="libs/angular-foundation/mm-foundation.min.js"></script>
+        <script src="libs/angular-foundation/mm-foundation-tpls.min.js"></script>
+        <script src="config/config.js"></script>
+        <script src="models/paste.factory.js"></script>
+        <script src="modules/_application/application.route.js"></script>
+        <script src="modules/pastes/paste.route.js"></script>
+        <script src="modules/pastes/index/paste.controller.js"></script>
+        <script src="modules/pastes/view/view.controller.js"></script>
+        <script src="modules/shared/topbar/topbar.controller.js"></script>
+    </body>
+</html>

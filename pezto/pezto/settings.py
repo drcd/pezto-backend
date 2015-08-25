@@ -54,10 +54,13 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'pezto.urls'
 
+TEMPLATE_PATH = os.path.join(BASE_DIR, 'templates')
+STATIC_PATH = os.path.join(BASE_DIR, 'static')
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [TEMPLATE_PATH],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -123,3 +126,14 @@ PASSWORD_HASHERS = (
 PEZTO_MAX_FILE_SIZE = 524288  # 512 KiB in bytes
 
 PEZTO_HASHIDS_SEED = 'gehtswy_x7$xjbsn+^25eh(q67yq@^-*l3qte31jv*wr#+6b18'
+
+STATIC_PATH = os.path.join(BASE_DIR, "static")
+
+if DEBUG:
+    STATIC_URL = '/static/'
+else:
+    STATIC_URL = '/static/'  # Define your static root for production here
+
+STATICFILES_DIRS = (
+    STATIC_PATH,
+)

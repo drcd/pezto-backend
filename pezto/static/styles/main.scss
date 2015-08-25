@@ -1,0 +1,36 @@
+// Foundation
+@import "../libs/foundation/scss/foundation";
+// Font awesome
+@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css";
+
+.headorino {
+	height: 10vh;
+	margin: 0 !important;
+}
+
+.pastorino {
+	height: 80vh;
+	margin: 0 !important;
+}
+
+.submitorino {
+	height: 10vh !important;
+	margin: 0 !important;
+}
+
+.setview {
+	position: absolute;
+	top: 45px;
+	right: 0;
+	opacity: 0;
+	transform: translateY(-100%);
+	border: black;
+	pointer-events: none;
+
+	transition: all .3s ease-in-out;
+	&.open {
+		transform: translateY(0);
+		opacity: 1;
+		pointer-events: default;
+	}
+}
