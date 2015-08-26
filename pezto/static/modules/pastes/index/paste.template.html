@@ -1,5 +1,23 @@
-<form ng-submit="pasto.makePaste()">
-    <input class="headorino" ng-model="pasto.title" placeholder="Name your paste here!" type="text"/>
-    <textarea class="pastorino" ng-model="pasto.content" placeholder="Paste it here!"></textarea>
-    <input type="submit" class="button expand submitorino" value="PASTE IT YO!"/>
-</form>
+<div class="fluid-row">
+    <div class="small-12 medium-8 columns collapsed">
+        <form class="pasteform" ng-submit="pasto.makePaste()">
+            <input class="headorino" ng-model="pasto.title" placeholder="Name your paste here!" type="text"/>
+            <textarea class="pastorino" ng-model="pasto.content" placeholder="Paste it here!"></textarea>
+            <label>
+                <p>I add password</p>
+                <input type="checkbox" ng-model="pasto.pass">
+            </label>
+            <input type="submit" class="button submitorino" value="PASTE IT YO!"/>
+            <input ng-show="pasto.pass" ng-model="pasto.password" type="text"/>
+        </form>
+    </div>
+
+    <div class="small-12 medium-4 columns">
+        <h1>What is Pezto?</h1>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, cumque cupiditate debitis dolore dolores
+            esse eveniet illo impedit, ipsam maiores nisi perferendis quas qui quia quod quos rem similique,
+            voluptatem.
+        </p>
+    </div>
+</div>

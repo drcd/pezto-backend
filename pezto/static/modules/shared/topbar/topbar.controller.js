@@ -20,13 +20,13 @@
 
 		}
 
-		function showView() {
-			if(!vm.view) {
-				vm.view = true;
-			} else {
-				vm.view = false;
-			}
-		}
+        function showView() {
+            if(!vm.view) {
+                vm.view = true;
+            } else {
+                vm.view = false;
+            }
+        }
 
 
 		function setView() {

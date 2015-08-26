@@ -10,9 +10,10 @@
 		/*jshint validthis: true */
 		var vm 			= this;
 		vm.makePaste	= makePaste;
-
+        vm.pass         = false;
 
 		activate();
+
 
 		function activate() {
 
@@ -21,9 +22,10 @@
 		function makePaste() {
 			PasteFactory.addPaste({
 				title: vm.title,
-				content: vm.content
+				content: vm.content,
+                password: vm.password
 			}).then(function(result) {
-				console.log(result)
+				console.log(result);
 				$state.go('application.pasteview', {id: result.data.uid });
 			});
 		}

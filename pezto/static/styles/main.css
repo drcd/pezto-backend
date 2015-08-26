@@ -6323,30 +6323,35 @@ th.hide-for-touch {
 @media not print {
   .show-for-print {
     display: none !important; } }
-.headorino {
-  height: 10vh;
-  margin: 0 !important; }
+.fluid-row {
+  margin: 0 auto;
+  max-width: 62.5rem;
+  width: 100%;
+  max-width: 100%; }
+  .fluid-row:before, .fluid-row:after {
+    content: " ";
+    display: table; }
+  .fluid-row:after {
+    clear: both; }
 
-.pastorino {
-  height: 80vh;
-  margin: 0 !important; }
+.collapsed {
+  padding: 0 !important; }
 
-.submitorino {
-  height: 10vh !important;
-  margin: 0 !important; }
-
-.setview {
+.setview input {
   position: absolute;
   top: 45px;
   right: 0;
   opacity: 0;
+  width: 300px;
   transform: translateY(-100%);
-  border: black;
   pointer-events: none;
   transition: all .3s ease-in-out; }
-  .setview.open {
-    transform: translateY(0);
-    opacity: 1;
-    pointer-events: all; }
+.setview.open input {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: all; }
+
+.headorino {
+  height: 20%; }
 
 /*# sourceMappingURL=main.css.map */
