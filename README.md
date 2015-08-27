@@ -35,7 +35,8 @@ After the PIP requirements has been installed, change the directory to /pezto: `
 By default, the dev server uses SQLite as a development database, so no further configuration is needed for the database.
 
 Run the following commands:
-```./manage.py makemigrations
+```
+./manage.py makemigrations
 ./manage.py migrate
 ```
 
@@ -49,7 +50,8 @@ When you're finished, you can disable the virtual environment by running `deacti
 
 If the PIP requirements.txt installation fails, try to install the requirements "manually" (sequentially).
 Make sure that your virtualenv is activated!
-```pip install bcrypt
+```
+pip install bcrypt
 pip install django
 pip install hashids
 pip install mysqlclient
