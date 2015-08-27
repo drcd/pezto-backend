@@ -5,6 +5,7 @@ A pastebin clone, running Django as backend and Angular as frontend.
 # Credits
 
 Oliver Stenkilde (@stenkilde) - Concept, Frontend
+
 Younes Zakaria (@drcd) - Backend
 
 # Requirements
