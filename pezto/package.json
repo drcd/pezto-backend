@@ -1,0 +1,25 @@
+{
+  "name": "pezto-backend",
+  "version": "1.0.0",
+  "description": "A pastebin clone, running Django as backend and Angular as frontend.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drcd/pezto-backend.git"
+  },
+  "authors": [
+    "Stenkilde <hello@stenkil.de>",
+    "DrCoolDude"
+  ],
+  "bugs": {
+    "url": "https://github.com/drcd/pezto-backend/issues"
+  },
+  "homepage": "https://github.com/drcd/pezto-backend#readme",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-concurrent": "^2.0.3",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-sass": "^1.0.0",
+    "grunt-shell": "^1.1.2",
+    "grunt-wiredep": "^2.0.0"
+  }
+}

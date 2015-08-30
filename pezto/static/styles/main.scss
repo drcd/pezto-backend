@@ -2,41 +2,5 @@
 @import "../libs/foundation/scss/foundation";
 // Font awesome
 @import "https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css";
-
-.fluid-row {
-    @include grid-row();
-    max-width: 100%;
-}
-
-.collapsed {
-    padding: 0 !important;
-}
-
-.setview {
-  	input {
-		position: absolute;
-		top: 45px;
-		right: 0;
-		opacity: 0;
-	  	width: 300px;
-		transform: translateY(-100%);
-		pointer-events: none;
-
-		transition: all .3s ease-in-out;
-	}
-	&.open {
-	  	input {
-		  transform: translateY(0);
-		  opacity: 1;
-		  pointer-events: all;
-		}
-	}
-}
-
-.pasteform {
-
-}
-
-.headorino {
-    height: 20%;
-}
+// layouts
+@import "layouts/master";
