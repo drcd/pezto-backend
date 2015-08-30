@@ -1,14 +1,23 @@
 <div class="fluid-row">
     <div class="small-12 medium-8 columns collapsed">
         <form class="pasteform" ng-submit="pasto.makePaste()">
-            <input class="headorino" ng-model="pasto.title" placeholder="Name your paste here!" type="text"/>
+            <div class="small-6 columns l-collapsed">
+                <input class="headorino" ng-model="pasto.title" placeholder="Name your paste here!" type="text"/>
+            </div>
+            <div class="small-6 columns collapsed">
+                <label>
+                    <span class="small-4 columns collapsed">
+                        <input type="checkbox" ng-model="pasto.pass">
+                        <span class="no-margin">I add password</span>
+                    </span>
+                    <span class="small-8 columns collapsed">
+                        <input ng-show="pasto.pass" ng-model="pasto.password" type="text"/>
+                    </span>
+                </label>
+            </div>
             <textarea class="pastorino" ng-model="pasto.content" placeholder="Paste it here!"></textarea>
-            <label>
-                <p class="no-margin">I add password</p>
-                <input type="checkbox" ng-model="pasto.pass">
-            </label>
+
             <input type="submit" class="button submitorino" value="PASTE IT YO!"/>
-            <input ng-show="pasto.pass" ng-model="pasto.password" type="text"/>
         </form>
     </div>
 

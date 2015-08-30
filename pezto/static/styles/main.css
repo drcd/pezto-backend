@@ -6297,6 +6297,12 @@ th.hide-for-touch {
 .collapsed {
   padding: 0 !important; }
 
+.l-collapsed {
+  padding-left: 0 !important; }
+
+.r-collapsed {
+  padding-right: 0 !important; }
+
 .setview input {
   position: absolute;
   top: 45px;
