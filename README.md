@@ -63,7 +63,7 @@ pip install mysqlclient
 All static files (JS, CSS, etc), are stored in the /static directory in /pezto. The index.html file is stored in /templates.
 
 To start working, make sure you have downloaded nodejs, bower and Ruby.
-If you have node and bower, go to the root of the git project and write ``` npm install && bower install ´´´ , that should download the required dependencies.
-After that simply run ``` grunt server ´´´ to run the server and compile scss!
+If you have node and bower, go to the root of the git project and write ``` npm install && bower install ``` , that should download the required dependencies.
+After that simply run ``` grunt server ``` to run the server and compile scss!
 
 TODO: Explain more about frontend, blah
