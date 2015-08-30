@@ -61,4 +61,5 @@ db.sqlite3
 
 #Frontend stuff
 pezto/static/libs
+pezto/node_modules
 .idea/
