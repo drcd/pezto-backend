@@ -1,3 +1,29 @@
-<h1>{{view.paste.title}}</h1>
+<div class="row">
+    <div class="small-6 columns">
+        <i ng-click="pasteview.isEdit = !pasteview.isEdit" class="fa fa-pencil"></i>
+        <h1>{{view.paste.title}}</h1>
 
-<p>{{view.paste.content}}</p>
+        <p>{{view.paste.content}}</p>
+
+    </div>
+
+    <div class="small-6 columns">
+        <div ng-if="pasteview.isEdit" class="edit-box">
+            <form ng-submit="pasteview.setEdit()">
+                <label>
+                    Header
+                    <input ng-model="pasteview.header" type="text"/>
+                </label>
+                <label>
+                    Content
+                    <textarea ng-model="pasteview.content"></textarea>
+                </label>
+                <label>
+                    Password
+                    <input ng-model="pasteview.password" type="password"/>
+                </label>
+                <input class="button primary" value="Edit" type="submit"/>
+            </form>
+        </div>
+    </div>
+</div>

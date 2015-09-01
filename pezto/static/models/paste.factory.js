@@ -10,7 +10,8 @@
 
 		var service = {
 			getSingle:		getSingle,
-			addPaste:		addPaste
+			addPaste:		addPaste,
+			editSingle:		editSingle
 		};
 
 		return service;
@@ -22,6 +23,22 @@
 
 
 			$http.post(url, content, {
+				headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+			}).then(function(results) {
+				deferred.resolve(results);
+			}, function(err) {
+				deferred.reject(err);
+			});
+			return deferred.promise;
+		}
+
+		function editSingle(content, id) {
+			var deferred = $q.defer();
+
+			var url = '/paste/' + id;
+
+
+			$http.put(url, content, id, {
 				headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
 			}).then(function(results) {
 				deferred.resolve(results);

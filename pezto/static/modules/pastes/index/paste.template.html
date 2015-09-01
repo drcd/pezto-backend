@@ -5,15 +5,13 @@
                 <input class="headorino" ng-model="pasto.title" placeholder="Name your paste here!" type="text"/>
             </div>
             <div class="small-6 columns collapsed">
-                <label>
-                    <span class="small-4 columns collapsed">
-                        <input type="checkbox" ng-model="pasto.pass">
-                        <span class="no-margin">I add password</span>
-                    </span>
-                    <span class="small-8 columns collapsed">
-                        <input ng-show="pasto.pass" ng-model="pasto.password" type="text"/>
-                    </span>
+                <label class="small-4 columns">
+                    <input type="checkbox" ng-model="pasto.pass">
+                    <span class="no-margin">I add password</span>
                 </label>
+                <div class="small-8 columns collapsed">
+                    <input ng-show="pasto.pass" ng-model="pasto.password" type="text"/>
+                </div>
             </div>
             <textarea class="pastorino" ng-model="pasto.content" placeholder="Paste it here!"></textarea>
 
@@ -28,5 +26,6 @@
             esse eveniet illo impedit, ipsam maiores nisi perferendis quas qui quia quod quos rem similique,
             voluptatem.
         </p>
+        <p ng-if="pasto.pass">What is password? Password is a setting you set høhø</p>
     </div>
 </div>

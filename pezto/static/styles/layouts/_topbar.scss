@@ -1,0 +1,21 @@
+.setview {
+    input {
+        position: absolute;
+        top: 45px;
+        right: 0;
+        opacity: 0;
+        width: 300px;
+        background: #fff;
+        transform: translateY(-100%);
+        pointer-events: none;
+        transition: all .3s ease-in-out;
+    }
+    &.open {
+        input {
+            z-index: 10;
+            transform: translateY(0);
+            opacity: 1;
+            pointer-events: all;
+        }
+    }
+}

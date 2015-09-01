@@ -30,7 +30,7 @@
 
 
 		function setView() {
-			$state.go('application.pasteview', {id: vm.id });
+			$state.go('application.pasteedit', {id: vm.id });
 		}
 
 	}

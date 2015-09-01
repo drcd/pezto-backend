@@ -31,7 +31,7 @@
 
 			var Edit = {
 				name: 'application.pasteedit',
-				url: '/create',
+				url: '/paste/edit/:id',
 				views: {
 					'main@application': {
 						templateUrl: 'static/modules/pastes/edit/edit.template.html',
